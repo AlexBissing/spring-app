@@ -13,5 +13,9 @@
     <bean id="rockBean"
           class="ru.bissing.springpractice.RockMusic">
     </bean>
+    <bean id="musicPlayer"
+          class="ru.bissing.springpractice.MusicPlayer">
+        <constructor-arg ref="rockBean"/>
+    </bean>
 
 </beans>

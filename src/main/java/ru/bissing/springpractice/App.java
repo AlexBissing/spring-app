@@ -8,13 +8,9 @@ public class App {
                 "applicationContext.xml"
         );
 
-        Music countryMusic = context.getBean("countryBean", Music.class);
-        Music rockMusic = context.getBean("rockBean", Music.class);
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        musicPlayer.playMusic();
 
-        MusicPlayer countryMusicPlayer = new MusicPlayer(countryMusic);
-        countryMusicPlayer.playMusic();
-        MusicPlayer rockMusicPlayer = new MusicPlayer(rockMusic);
-        rockMusicPlayer.playMusic();
         context.close();
     }
 }
