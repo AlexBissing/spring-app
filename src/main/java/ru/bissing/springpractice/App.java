@@ -8,9 +8,14 @@ public class App {
                 "applicationContext.xml"
         );
 
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer.playMusic();
-
+        CountryMusic countryMusic = context.getBean("countryBean", CountryMusic.class);
+        System.out.println(countryMusic.getSong());
+//        MusicPlayer firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+//        MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+//
+//        boolean comparison = firstMusicPlayer == secondMusicPlayer;
+//
+//        System.out.println(comparison);
         context.close();
     }
 }

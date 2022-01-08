@@ -6,16 +6,22 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="countryBean"
-          class="ru.bissing.springpractice.CountryMusic">
+          class="ru.bissing.springpractice.CountryMusic"
+                init-method="doInitMethod"
+                destroy-method="doDestroyMethod"
+                factory-method="getCountryMusic">
     </bean>
     <bean id="rockBean"
           class="ru.bissing.springpractice.RockMusic">
     </bean>
-    <bean id="musicPlayer"
-          class="ru.bissing.springpractice.MusicPlayer">
-        <constructor-arg ref="rockBean"/>
-    </bean>
+<!--    <bean id="musicPlayer"-->
+<!--          class="ru.bissing.springpractice.MusicPlayer">-->
+<!--        <property name="music" ref="rockBean"/>-->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
 
 </beans>
