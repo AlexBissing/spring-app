@@ -1,8 +1,7 @@
 package ru.bissing.springpractice;
 
 import org.springframework.stereotype.Component;
-
-@Component("countryBean")
+@Component
 public class CountryMusic implements Music {
     private CountryMusic() {}
 

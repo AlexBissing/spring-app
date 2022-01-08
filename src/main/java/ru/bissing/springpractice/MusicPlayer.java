@@ -1,37 +1,19 @@
 package ru.bissing.springpractice;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MusicPlayer {
-    private Music music;
-    private String name;
-    private int volume;
+    private CountryMusic countryMusic;
+    private RockMusic rockMusic;
 
-    public MusicPlayer() {};
-
-    public MusicPlayer(Music music) {
-        this.music = music;
+    public MusicPlayer(CountryMusic countryMusic, RockMusic rockMusic) {
+        this.countryMusic = countryMusic;
+        this.rockMusic = rockMusic;
     }
 
-    public void setMusic(Music music) {
-        this.music = music;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getVolume() {
-        return volume;
-    }
-
-    public void setVolume(int volume) {
-        this.volume = volume;
-    }
-
-    public void playMusic() {
-        System.out.println("Playing: " + music.getSong());
+    public String playMusic() {
+        return "Playing: " + countryMusic.getSong();
     }
 }
